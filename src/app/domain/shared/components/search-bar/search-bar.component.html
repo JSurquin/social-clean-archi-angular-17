@@ -1,0 +1,29 @@
+<div class="relative">
+  <form [formGroup]="searchInput$">
+    <input
+      formControlName="search"
+      type="text"
+      class="form-control"
+      placeholder="Search..."
+    />
+  </form>
+
+  @if (data() && searchInput$.value.search) {
+  <div
+    class="absolute p-4 bg-white shadow-xl border-2 border-red-500 top-10 right-0"
+  >
+    <div class="whitespace-pre-wrap flex-wrap">
+      @for(d of data(); track d.id){
+      <div>
+        <a
+          [routerLink]="['/profil', d.id]"
+          routerLinkActive="router-link-active"
+          >{{ d.name }}</a
+        >
+      </div>
+      }
+    </div>
+  </div>
+
+  }
+</div>

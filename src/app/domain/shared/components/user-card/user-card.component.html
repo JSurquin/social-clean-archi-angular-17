@@ -1,0 +1,11 @@
+@if(user){
+<div>
+  <div class="bg-red-500 text-white p-3 rounded-pill">
+    {{ user.id }} - {{ user.name }} - {{ user.email }}
+  </div>
+</div>
+} @else {
+<div>
+  <div class="bg-red-500 text-white p-3 rounded-pill">No user</div>
+</div>
+}
